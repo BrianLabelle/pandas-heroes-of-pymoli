@@ -1,0 +1,326 @@
+Heroes Of Pymoli Data Analysis
+
+As final considerations:
+
+
+You must use the Pandas Library and the Jupyter Notebook.
+You must submit a link to your Jupyter Notebook with the viewable Data Frames.
+You must include a written description of three observable trends based on the data.
+See Example Solution for a reference on expected format.
+
+
+Without surprise, young males are the dominant active players. The demographic between 20-24 is the highest peak age most probably because they have some disposable income & spare time to purchase games and enjoy the games. It's interesting to see that females tend to purchase more expensive games and spend more per person. This could be because they are selecting higher value games as opposed to men would tend to purchase cheaper slasher games. Looking at the age demographics & purchasing analysis by age, it's interesting to see the drop off of purchase counts beyond 35+. This demographic most probably sees the most disposable income to purchase games but probably the least amount of time to enjoy them with other priorities taking precedence. This seems to be confirmed by this age group having the highest average purchase price and the highest average total per person. It's nice to see a female in the top 5 spenders ( 20% ) which almost mirrors the 84% to 14% demographic. Most females purchased the Nirvana title, while most males purchased Final Critic. It would be interesting to see which genre of video games these are.
+
+Reference:
+https://pandas.pydata.org/pandas-docs/stable/index.html
+# https://www.linkedin.com/learning/pandas-essential-training/groupby-computations
+# https://www.geeksforgeeks.org/create-a-pandas-dataframe-from-lists/
+# https://stackoverflow.com/questions/20937538/how-to-display-pandas-dataframe-of-floats-using-a-format-string-for-columns
+# https://www.geeksforgeeks.org/how-to-get-column-names-in-pandas-dataframe/
+# https://www.geeksforgeeks.org/python-pandas-dataframe-drop_duplicates/
+# https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
+# https://stackoverflow.com/questions/19851005/rename-pandas-dataframe-index
+# https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/
+# https://stackoverflow.com/questions/14529838/apply-multiple-functions-to-multiple-groupby-columns
+
+
+
+1.
+# Dependencies and Setup
+import pandas as pd
+import numpy as np
+
+# File to Load (Remember to Change These)
+file_to_load = "Resources/purchase_data.csv"
+
+# Read Purchasing File and store into Pandas data frame
+purchase_data = pd.read_csv(file_to_load)
+
+2. Player Count:
+# Player Unique Count ( puc ): Retrieves an integer count of unique rows by SN ( Player Name )
+puc = purchase_data['SN'].nunique()
+
+# DataFrame Player Count ( df_pc ): Creates a dataframe to house a single column to return Player Unique Count
+df_pc = pd.DataFrame({"Total Players" :[puc]})
+df_pc
+
+3. Purchasing Analysis ( Total )
+# Number of Unique Items ( nui ): Defines an integer returning the number of unique items in the item ID column
+# Average Price ( avgprice ): Returns a rounded float to 2 decimal places which is processed through the mean function.
+# Number of Purchases ( nop ): Returns an integer that counts the number of purchases in the Purchase ID column.
+# Total Revenue ( tr ): Returns a float value which is processed through the sum function to return the toal revenue from the price column
+# googled line of code to format numbers to dollar values which formats all floats to dollar value rounded to 2 decimal places.
+# Purchasing Analysis DataFrame ( df_pa ): Creates a dataframe to house column labels and passed summary variable.
+
+nui = purchase_data['Item ID'].nunique()
+avgprice = round(purchase_data['Price'].mean(),2)
+nop = purchase_data['Purchase ID'].count()
+tr = purchase_data['Price'].sum()
+pd.options.display.float_format = '${:,.2f}'.format
+df_pa = pd.DataFrame({"Number of Unique Items" :[nui], "Average Price": [avgprice],"Number of Purchases" :[nop],"Total Revenue":[tr]})
+df_pa
+
+
+
+4. Gender Demopgrapics
+# Gender Demographics DataFrame ( gd ): Creates 2 column dataframe to house PLayer Name and Gender.
+# dataframe is sorted inplace on player name and then duplicates are dropped. ( Googled answer)
+# Gender Demogaphics Series ( gds ): Returns all unique values in Gender column and counts their totals from the dg dataframe.
+# googled line of code to format numbers to percent values which formats all floats to % value rounded to 2 decimal places.
+# Gender Demopgraphics DataFame ( df_gd ): Creates a 3 column dataframe with column labels and I pass in the 3 returned values
+#    from the Gender Demographics Series by element number.
+
+gd = purchase_data[["SN","Gender"]]
+gd.sort_values("SN", inplace = True)
+gd.drop_duplicates(inplace=True)
+gds = gd.Gender.value_counts()
+
+pd.options.display.float_format = '{:,.2f}%'.format
+df_gd = pd.DataFrame({"Male" :[gds[0]], "Female": [gds[1]],"Other / Non-Disclosed" :[gds[2]]})
+
+# Unique Player Count ( upc ): Returns an integer from the purchase dataframe based on the player count and is processed through the nunique function.
+# Total Count Male Percent ( tcmpct ): Returns a float value which was divided by the retrieved total of male players 
+# Total Count Female Percent ( tcfpct ): Returns a float value which was divided by the retrieved total of female players 
+# Total Count Other Percent ( tcopct ): Returns a float value which was divided by the retrieved total of other players 
+
+upc = purchase_data['SN'].nunique()
+tcmpct = round(df_gd["Male"].values[0]/upc*100,2)
+tcfpct = round(df_gd["Female"].values[0]/upc*100,2)
+tcopct = round(df_gd["Other / Non-Disclosed"].values[0]/upc*100,2)
+
+# Rename the dataframe index from 0 to Total Count
+# Transpose of dataframe to mirror requested output
+
+df_gd.rename(index={0:"Total Count"}, inplace=True)
+transposed_df = df_gd.T
+
+# Pass in the List of Percentage player data into the new column Percentage of Players
+# Display output
+
+pp = [tcmpct, tcfpct, tcopct]
+transposed_df["Percentage of Players"] = pp
+transposed_df
+
+5. Purchasing Analysis ( Gender )
+# REFERENCES
+# https://www.linkedin.com/learning/pandas-essential-training/groupby-computations
+# https://www.geeksforgeeks.org/create-a-pandas-dataframe-from-lists/
+# https://stackoverflow.com/questions/20937538/how-to-display-pandas-dataframe-of-floats-using-a-format-string-for-columns
+# https://www.geeksforgeeks.org/how-to-get-column-names-in-pandas-dataframe/
+# https://www.geeksforgeeks.org/python-pandas-dataframe-drop_duplicates/
+# https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
+# https://stackoverflow.com/questions/19851005/rename-pandas-dataframe-index
+# https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/
+# https://stackoverflow.com/questions/14529838/apply-multiple-functions-to-multiple-groupby-columns
+
+# Start with Original DataFrame Purchase Data
+pa = purchase_data
+
+# Creates Series Purchase Count ( s_pc ) which returns total amount of player purchases based on player name, ( better would be to use Purchase ID but it had a space in the name )
+# Creates Serice Average Purchase Price ( s_app ) which returns the average purchase price by gender, a float value which is processed through the mean function
+# Creates Series Total Purchase Price (s_tpp) which returns the toal purchase price by genter
+# Average Total Purchase per person DataFrame ( df_atpp ) : a series of 3 entries ( s_tpp ) divided by their respective dataframe entries of ( df_gd ) by gender
+
+s_pc = pa.groupby("Gender").SN.count()
+s_app = pa.groupby("Gender").Price.mean()
+s_tpp = pa.groupby("Gender").Price.sum()
+df_atpp = s_tpp/df_gd
+
+# googled line of code to format numbers to percent values which formats all floats to % value rounded to 2 decimal places.
+pd.options.display.float_format = '${:,.2f}'.format
+
+# Creates Purchasing Analysis DataFrame: ( df_pa ), creates labeled columns and passes through the calucated values based on index element number
+df_pa = pd.DataFrame({"Purchase Count": [s_pc[0],s_pc[1],s_pc[2]], "Average Purchase Price":[s_app[0],s_app[1],s_app[2]],
+                    "Total Purchase Price":[s_tpp[0],s_tpp[1],s_tpp[2]], "Avg Total Purchase per Person":[df_atpp.iloc[0,0],df_atpp.iloc[0,1],df_atpp.iloc[0,2]]})
+
+# Rename the dataframe indexes to labels to mirror the requested output.
+df_pa.rename(index={0:"Female", 1:"Male", 2:"Other / Non-Disclosed"}, inplace=True)
+
+# Add the Index Name to Gender to mirror requested output and output completed dataframe
+df_pa.index.name = 'Gender'
+df_pa
+
+
+6. Age Demographics
+
+# REFERENCES
+# https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.cut.html
+# http://localhost:8888/notebooks/000-Pandas/3/Activities/03-Ins_Binning/Solved/Binning.ipynb
+# https://chrisalbon.com/python/data_wrangling/pandas_delete_duplicates/
+# https://stackoverflow.com/questions/34317149/pandas-groupby-with-bin-counts
+# https://www.reddit.com/r/learnpython/comments/73z4e2/pandas_groupby_or_cut_dataframe_to_bins/
+# https://stackoverflow.com/questions/45389126/sort-index-by-list-python-pandas
+
+# Start with Original DataFrame Purchase Data
+df_pa = purchase_data
+
+# Create bins list for ages & index labels list for age range categories
+l_bins = [0,9,14,19,24,29,34,39,120]
+l_agerange = ["<10", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40+"]
+
+# Unique Player Count ( upc ): Returns an integer from the purchase dataframe based on the player count and is 
+#   processed through the nunique function.
+upc = df_pa['SN'].nunique()
+
+# Creates unique Player DataFrame 780 entries ( df_upd ) filtered by Player Name, Age and Gender based on original dataframe Purchase Data
+# Sorts Dataframe inplace and drops duplicate rows based on sorted player name inplace.
+df_upd = df_pa.filter(["SN", "Age", "Gender"], axis =1)
+df_upd.sort_values("SN", inplace = True)
+df_upd.drop_duplicates(subset="SN",keep = 'first', inplace=True)
+
+# Appends a column for label Age Groups to DataFrame ( upd ) & creates new dataframegroupby object ( dfgbo_age ) and groups by Age Groups.
+df_upd["Age Groups"] = pd.cut(df_upd["Age"],l_bins, labels=l_agerange)
+dfgbo_age = df_upd.groupby(["Age Groups"])
+
+# Creates a series to house the age purchases counts
+s_agepur = df_upd["Age Groups"].value_counts()
+
+# Creates a series that calculates the percentage of players in each age group
+s_agepct = s_agepur / upc * 100
+
+# Creates Age Demographics DataFrame ( df_ad ) with columns to display Total Count and % of players by age group.
+df_ad = pd.DataFrame({"Total Count": s_agepur,"Percentage of Players":s_agepct})
+
+# googled line of code to format numbers which formats all floats to rounded to 2 decimal places.
+pd.options.display.float_format = '{:,.2f}'.format
+
+# Resort Dataframe ( df_ad) by l_agerange list to mirror desired output from smallest to largest age group.
+df_ad = df_ad.reindex(l_agerange)
+
+df_ad
+
+
+
+
+
+7. Purchasing Analysis ( Age )
+
+# Start with Original DataFrame Purchase Data
+df_pa = purchase_data
+
+# Create bins list for ages & index labels list for age range categories
+l_bins = [0,9,14,19,24,29,34,39,120]
+l_agerange = ["<10", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40+"]
+
+# Unique Player Count ( upc ): Returns an integer from the purchase dataframe based on the player count and is 
+#   processed through the nunique function.
+# upc = df_pa['SN'].nunique()
+
+# Creates Purchase Analysis ( Age ) DataFrame 780 entries ( df_paa ) filtered by Purchase ID, Age and Price based on original dataframe Purchase Data
+# Sorts Dataframe inplace and drops duplicate rows based on sorted player name inplace.
+df_paa = df_pa.filter(["Purchase ID", "Age", "Price"], axis =1)
+
+# Appends a column for label Age Groups to DataFrame ( upd ) & creates new dataframegroupby object ( dfgbo_age ) and groups by Age Groups.
+df_paa["Age Groups"] = pd.cut(df_paa["Age"],l_bins, labels=l_agerange)
+dfgbo_paa = df_paa.groupby(["Age Groups"])
+
+# Creates Series Purchase Count ( s_agepur ) which returns total amount of player purchases based on selected age group
+# Creates Serice Average Purchase Price ( s_appa ) which returns the average purchase price by age, a float value which is processed through the mean function
+# Creates Series Total Purchase Price (s_tppa) which returns the toal purchase price by age
+# Average Total Purchase per person DataFrame ( df_atppa ) : a series of 8 entries ( s_tppa ) divided by their respective dataframe entries of ( df_gd ) by age
+s_agepur = df_paa["Age Groups"].value_counts()
+s_appa = df_paa.groupby("Age Groups").Price.mean()
+s_tppa = df_paa.groupby("Age Groups").Price.sum()
+
+# reperposed from above to grab the total person count by age group which is divided into the Total Purchase value.
+s_agepurtc = df_upd["Age Groups"].value_counts()
+df_atppa = s_tppa/s_agepurtc
+
+
+# Creates Purchasing Analysis Age DataFrame ( df_aaa ) with columns to display Total Count and % of players by age group.
+df_paa = pd.DataFrame({"Purchase Count": s_agepur,"Average Purchase Price":s_appa,"Total Purchase Value":s_tppa,"Avg Total Purchase per Person":df_atppa})
+
+# googled line of code to format numbers to percent values which formats all floats to % value rounded to 2 decimal places.
+pd.options.display.float_format = '${:,.2f}'.format
+
+# Resort Dataframe ( df_ad) by l_agerange list to "give the displayed data cleaner formatting" output from smallest to largest age group.
+df_paa = df_paa.reindex(l_agerange)
+
+df_paa
+
+
+8. Top Spenders 
+
+# REFERENCE
+# https://pandas.pydata.org/pandas-docs/version/0.19/generated/pandas.DataFrame.sort.html
+# https://stackoverflow.com/questions/17839973/constructing-pandas-dataframe-from-values-in-variables-gives-valueerror-if-usi
+
+# Start with Original DataFrame Purchase Data
+df_pa = purchase_data
+
+# Create a staging dataframe that holds Player Name, Price and purchase ID & format float values as dollars.
+df_tp = df_pa.filter(["SN", "Price", "Purchase ID"])
+pd.options.display.float_format = '${:,.2f}'.format
+
+# Creates Series Top Purchase Count ( top_purchase_counts ) which returns total amount of player purchases based on player name
+# Creates Serice Top Average Purchase Price ( top_avg_pur_price ) which returns the average purchase price by player, a float value which is processed through the mean function
+# Creates Series Top Total Purchase Price (top_tot_pur_val ) which returns the total purchases by player
+
+top_purchase_counts = df_tp.groupby("SN").Price.count()
+top_avg_pur_price = df_tp.groupby("SN").Price.mean()
+top_tot_pur_val = df_tp.groupby("SN").Price.sum()
+
+# Creates dataframe to merge series into dataframe based on title positions.
+df_top_spender = pd.DataFrame({"Purchase Count":top_purchase_counts, 
+                              "Average Purchase Price":top_avg_pur_price,"Total Purchase Value":top_tot_pur_val})
+
+# Creates dataframe to sort by descending order on the Total Purchase Value column and return head 5 for top 5 entries
+df_top_5_spender = df_top_spender.sort_values("Total Purchase Value", ascending=False)
+df_top_5_spender.head(5)
+
+
+
+
+
+
+
+9. Most Popular Items
+
+#REFERENCE
+# https://www.geeksforgeeks.org/python-pandas-dataframe-get_value/
+# https://appdividend.com/2019/01/26/pandas-set-index-example-python-set_index-tutorial/
+# https://www.geeksforgeeks.org/python-pandas-dataframe-loc/
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html#pandas.DataFrame.at
+
+# Start with Original DataFrame Purchase Data
+df_pa = purchase_data
+
+# Create a staging dataframe that holds Popular Items, Price and purchase ID & format float values as dollars.
+df_mpopit = df_pa.filter(["Item ID", "Item Name", "Price", "Purchase ID"])
+
+pd.options.display.float_format = '${:,.2f}'.format
+purchase_item_counts = df_mpopit.groupby("Item Name").Price.count()
+item_price = df_mpopit.groupby("Item Name").Price.sum()/purchase_item_counts
+total_purchase_value = purchase_item_counts * item_price
+
+# Creates dataframe to merge series into dataframe based on title positions.
+df_mpopit = pd.DataFrame({"Purchase Count":purchase_item_counts, 
+                              "Item Price":item_price,"Total Purchase Value":total_purchase_value})
+
+# Creates dataframe to sort by descending order on the Purchase Count column and return head 5 for top 5 entries
+df_mpopit = df_mpopit.sort_values("Purchase Count", ascending=False)
+df_mpopit.head(5)
+
+### My results differ because PANDAS took the average Item Price of Final Critic with 8 entries @ 4.88 & 5 entries @ 4.19
+
+
+
+10. Most profitable Items
+
+# Creates dataframe to sort by descending order on the Total Purchase Value column and return head 5 for top 5 entries
+df_mpopit = df_mpopit.sort_values("Total Purchase Value", ascending=False)
+df_mpopit.head(6)
+
+### My results differ because PANDAS took the average Item Price of Final Critic with 8 entries @ 4.88 & 5 entries @ 4.19
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+odd errors
+A value is trying to be set on a copy of a slice from a DataFrame
+ValueError: operands could not be broadcast together with shapes (179,) (0,) 
+IndexError: single positional indexer is out-of-bounds
+ValueError: Invalid call for scalar access (getting)!
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Exception: Column(s) Price already selected
+AttributeError: 'SeriesGroupBy' object has no attribute 'value'
+ValueError: operands could not be broadcast together with shapes (179,) (145,) 
