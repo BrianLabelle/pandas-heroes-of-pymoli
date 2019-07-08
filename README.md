@@ -7,7 +7,7 @@ Data Analytics - Boot Camp - Homework #4 - Heroes of Pymoli | Data Analysis
 
 
 * Player Count
-![Player Count](Resources\001-hero.jpg)
+![Player Count](Resources/001-hero.jpg)
 
 * Purchasing Analysis (Total)
 
