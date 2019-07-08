@@ -1,39 +1,31 @@
-# pandas-heroes-of-pymoli
-Heroes of Pymoli | Data Analysis
-# hw2
-Data Analytics - Boot Camp - Homework #2 - The VBA of Wall Street
-# Unit 2 | Assignment - The VBA of Wall Street
+Data Analytics - Boot Camp - Homework #4 - Heroes of Pymoli | Data Analysis
+# Unit 4 | Assignment - Heroes of Pymoli | Data Analysis
 
-![hard_solution](rice-cookers2.jpg)
+![hard_solution](rice-cookers-hw-pandas.jpg)
 
-### Hard
+### Data Analysis Includes:
 
-* My solution will includes everything from the moderate challenge.
+* Player Count¶
 
-* My solution will also be able to return the stock with the "Greatest % increase", "Greatest % Decrease" and "Greatest total volume".
+* Purchasing Analysis (Total)
 
+* Gender Demographics
 
-### CHALLENGE
+* Purchasing Analysis (Gender)
 
-* I made appropriate adjustments to your script that will allow it to run on every worksheet, i.e., every year, just by running it once.
-
-* This can be applied to any of the difficulties. ( I removed the stock ticker with 0 values in it )
-
-### Other Considerations
-
-* My script acts the same on each sheet. 
+* Age Demographics¶
 
 
 ## Submission
 
 * Submitted to GitHub:
 
-  * Microsoft Word Document with 3 screenshots for each year of the Multi-Stock-Year Data.
-  * VBA Script as separate files and the exported module file in BAS just incase. 
+  * Microsoft Word Document Heroes of Pymoli-Analysis.docx with clean DataFrame screenshot results.
+  * Pandas Cell Code - heroes_of_pymoli_code.txt as separate file.
 
 
 
-https://github.com/BrianLabelle/hw2
+https://github.com/BrianLabelle/pandas-heroes-of-pymoli
 
 - - -
 
