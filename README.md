@@ -3,39 +3,39 @@ Data Analytics - Boot Camp - Homework #4 - Heroes of Pymoli | Data Analysis
 
 ![hard_solution](rice-cookers-hw-pandas.jpg)
 
-### Data Analysis Includes:
+## Data Analysis Includes:
 
 
-* Player Count
+### Player Count
 
 ![Player Count](Resources/001-hero.jpg)
 
-* Purchasing Analysis (Total)
+### Purchasing Analysis (Total)
 
 ![Purchasing Analysis](Resources/002-hero.jpg)
 
 
-* Gender Demographics
+### Gender Demographics
 
 ![Gender Demographics](Resources/003-hero.jpg)
 
-* Purchasing Analysis (Gender)
+### Purchasing Analysis (Gender)
 
 ![Purchasing Analysis](Resources/005-hero.jpg)
 
-* Age Demographics
+### Age Demographics
 
 ![Age Demographics](Resources/006-hero.jpg)
 
-* Purchasing Analysis (Age)
+### Purchasing Analysis (Age)
 
 ![Purchasing Analysis](Resources/008-hero.jpg)
 
-* Top Spenders
+### Top Spenders
 
 ![Top Spenders](Resources/009-hero.jpg)
 
-* Most Popular Items
+### Most Popular Items
 
 ![Most Popular Items](Resources/010-hero.jpg)
 
