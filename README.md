@@ -3,6 +3,13 @@ Data Analytics - Boot Camp - Homework #4 - Heroes of Pymoli | Data Analysis
 
 ![hard_solution](rice-cookers-hw-pandas.jpg)
 
+- - -
+
+## Special Attention to:
+  * My results differ on Top Spenders & Most Popular Items because PANDAS took the average Item Price of Final Critic with 8 entries @ 4.88 & 5 entries @ 4.19
+  * Displayed 6 results on purpose for Most Popular Items
+- - -
+
 ## Data Analysis Includes:
 
 
