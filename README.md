@@ -48,31 +48,31 @@ https://github.com/BrianLabelle/pandas-heroes-of-pymoli
  - ValueError: operands could not be broadcast together with shapes (179,) (145,)
 
 
-## References:
-### General
-# https://pandas.pydata.org/pandas-docs/stable/index.html
-# https://www.linkedin.com/learning/pandas-essential-training/groupby-computations
-# https://www.geeksforgeeks.org/create-a-pandas-dataframe-from-lists/
-# https://stackoverflow.com/questions/20937538/how-to-display-pandas-dataframe-of-floats-using-a-format-string-for-columns
-# https://www.geeksforgeeks.org/how-to-get-column-names-in-pandas-dataframe/
-# https://www.geeksforgeeks.org/python-pandas-dataframe-drop_duplicates/
-# https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
-# https://stackoverflow.com/questions/19851005/rename-pandas-dataframe-index
-# https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/
-# https://stackoverflow.com/questions/14529838/apply-multiple-functions-to-multiple-groupby-columns
+# References:
+## General
+##### https://pandas.pydata.org/pandas-docs/stable/index.html
+##### https://www.linkedin.com/learning/pandas-essential-training/groupby-computations
+##### https://www.geeksforgeeks.org/create-a-pandas-dataframe-from-lists/
+##### https://stackoverflow.com/questions/20937538/how-to-display-pandas-dataframe-of-floats-using-a-format-string-for-columns
+##### https://www.geeksforgeeks.org/how-to-get-column-names-in-pandas-dataframe/
+##### https://www.geeksforgeeks.org/python-pandas-dataframe-drop_duplicates/
+##### https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
+##### https://stackoverflow.com/questions/19851005/rename-pandas-dataframe-index
+##### https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/
+##### https://stackoverflow.com/questions/14529838/apply-multiple-functions-to-multiple-groupby-columns
 
-### 5. Purchasing Analysis ( Gender )
-# https://www.linkedin.com/learning/pandas-essential-training/groupby-computations
-# https://www.geeksforgeeks.org/create-a-pandas-dataframe-from-lists/
-# https://stackoverflow.com/questions/20937538/how-to-display-pandas-dataframe-of-floats-using-a-format-string-for-columns
-# https://www.geeksforgeeks.org/how-to-get-column-names-in-pandas-dataframe/
-# https://www.geeksforgeeks.org/python-pandas-dataframe-drop_duplicates/
-# https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
-# https://stackoverflow.com/questions/19851005/rename-pandas-dataframe-index
-# https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/
-# https://stackoverflow.com/questions/14529838/apply-multiple-functions-to-multiple-groupby-columns
+## 5. Purchasing Analysis ( Gender )
+##### https://www.linkedin.com/learning/pandas-essential-training/groupby-computations
+##### https://www.geeksforgeeks.org/create-a-pandas-dataframe-from-lists/
+##### https://stackoverflow.com/questions/20937538/how-to-display-pandas-dataframe-of-floats-using-a-format-string-for-columns
+##### https://www.geeksforgeeks.org/how-to-get-column-names-in-pandas-dataframe/
+##### https://www.geeksforgeeks.org/python-pandas-dataframe-drop_duplicates/
+##### https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
+##### https://stackoverflow.com/questions/19851005/rename-pandas-dataframe-index
+##### https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/
+##### https://stackoverflow.com/questions/14529838/apply-multiple-functions-to-multiple-groupby-columns
 
-### 6. Age Demographics
+## 6. Age Demographics
 # https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.cut.html
 # http://localhost:8888/notebooks/000-Pandas/3/Activities/03-Ins_Binning/Solved/Binning.ipynb
 # https://chrisalbon.com/python/data_wrangling/pandas_delete_duplicates/
@@ -80,15 +80,15 @@ https://github.com/BrianLabelle/pandas-heroes-of-pymoli
 # https://www.reddit.com/r/learnpython/comments/73z4e2/pandas_groupby_or_cut_dataframe_to_bins/
 # https://stackoverflow.com/questions/45389126/sort-index-by-list-python-pandas
 
-### 8. Top Spenders
+## 8. Top Spenders
 # https://pandas.pydata.org/pandas-docs/version/0.19/generated/pandas.DataFrame.sort.html
 # https://stackoverflow.com/questions/17839973/constructing-pandas-dataframe-from-values-in-variables-gives-valueerror-if-usi
 
-### 9. Most Popular Items
-# https://www.geeksforgeeks.org/python-pandas-dataframe-get_value/
-# https://appdividend.com/2019/01/26/pandas-set-index-example-python-set_index-tutorial/
-# https://www.geeksforgeeks.org/python-pandas-dataframe-loc/
-# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html#pandas.DataFrame.at
+## 9. Most Popular Items
+##### https://www.geeksforgeeks.org/python-pandas-dataframe-get_value/
+##### https://appdividend.com/2019/01/26/pandas-set-index-example-python-set_index-tutorial/
+##### https://www.geeksforgeeks.org/python-pandas-dataframe-loc/
+##### https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html#pandas.DataFrame.at
 
 
 
