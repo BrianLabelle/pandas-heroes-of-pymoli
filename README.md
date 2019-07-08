@@ -5,7 +5,7 @@ Data Analytics - Boot Camp - Homework #4 - Heroes of Pymoli | Data Analysis
 
 ### Data Analysis Includes:
 
-* Player Count¶
+* Player Count
 
 * Purchasing Analysis (Total)
 
@@ -62,6 +62,7 @@ https://github.com/BrianLabelle/pandas-heroes-of-pymoli
 ##### https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/
 ##### https://stackoverflow.com/questions/14529838/apply-multiple-functions-to-multiple-groupby-columns
 
+
 ## 5. Purchasing Analysis ( Gender )
 ##### https://www.linkedin.com/learning/pandas-essential-training/groupby-computations
 ##### https://www.geeksforgeeks.org/create-a-pandas-dataframe-from-lists/
@@ -73,6 +74,7 @@ https://github.com/BrianLabelle/pandas-heroes-of-pymoli
 ##### https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/
 ##### https://stackoverflow.com/questions/14529838/apply-multiple-functions-to-multiple-groupby-columns
 
+
 ## 6. Age Demographics
 ##### https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.cut.html
 ##### http://localhost:8888/notebooks/000-Pandas/3/Activities/03-Ins_Binning/Solved/Binning.ipynb
@@ -81,9 +83,11 @@ https://github.com/BrianLabelle/pandas-heroes-of-pymoli
 ##### https://www.reddit.com/r/learnpython/comments/73z4e2/pandas_groupby_or_cut_dataframe_to_bins/
 ##### https://stackoverflow.com/questions/45389126/sort-index-by-list-python-pandas
 
+
 ## 8. Top Spenders
 ##### https://pandas.pydata.org/pandas-docs/version/0.19/generated/pandas.DataFrame.sort.html
 ##### https://stackoverflow.com/questions/17839973/constructing-pandas-dataframe-from-values-in-variables-gives-valueerror-if-usi
+
 
 ## 9. Most Popular Items
 ##### https://www.geeksforgeeks.org/python-pandas-dataframe-get_value/
