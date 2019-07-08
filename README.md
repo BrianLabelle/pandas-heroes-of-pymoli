@@ -5,7 +5,9 @@ Data Analytics - Boot Camp - Homework #4 - Heroes of Pymoli | Data Analysis
 
 ### Data Analysis Includes:
 
+
 * Player Count
+![Player Count](Resources\001-hero.jpg)
 
 * Purchasing Analysis (Total)
 
