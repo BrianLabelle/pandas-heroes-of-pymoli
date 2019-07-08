@@ -28,6 +28,7 @@ Data Analytics - Boot Camp - Homework #4 - Heroes of Pymoli | Data Analysis
 
   * Microsoft Word Document Heroes of Pymoli-Analysis.docx with clean DataFrame screenshot results.
   * Pandas Cell Code - heroes_of_pymoli_code.txt as separate file.
+  * HeroesOfPymoli.ipynb to show all of the code with poor table displays.
 
 https://github.com/BrianLabelle/pandas-heroes-of-pymoli
 
