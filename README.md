@@ -101,6 +101,9 @@ https://github.com/BrianLabelle/pandas-heroes-of-pymoli
 
 # References:
 ## General
+##### https://www.linkedin.com/learning/pandas-for-data-science/create-series
+##### https://www.linkedin.com/learning/python-data-analysis/dataframes-in-pandas
+##### https://www.linkedin.com/learning/python-for-data-science-essential-training/treat-missing-values?autoplay=true
 ##### https://pandas.pydata.org/pandas-docs/stable/index.html
 ##### https://www.linkedin.com/learning/pandas-essential-training/groupby-computations
 ##### https://www.geeksforgeeks.org/create-a-pandas-dataframe-from-lists/
